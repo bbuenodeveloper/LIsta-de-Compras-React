@@ -12,19 +12,19 @@ function App() {
   function cliqueiNoBotao() {
 
     //verificação de campo vazio
-    if(inputRef.current.value === "") return
+    if (inputRef.current.value === "") return
 
-  //recebendo os produtos pelo id usando o v4 e os produtos colocando como nome e usando o useState para colocar na tela
+    //recebendo os produtos pelo id usando o v4 e os produtos colocando como nome e usando o useState para colocar na tela
     setProdutos([
       {
         id: v4(),
         nome: inputRef.current.value
-      }, ...produtos]) 
+      }, ...produtos])
 
     inputRef.current.value = ""
 
   }
-  
+
 
   //função para deletar o produto que foi adcionado na lista
   function deletar(id) {
@@ -45,7 +45,7 @@ function App() {
       {/* usando o map para passar pelos produtos e colocar na tela */}
       {produtos.map((produto) => (
         <div key={produto.id} className="ml-4 pb-4 flex">
-          <p className="pr-4">{produto.nome}</p>        
+          <p className="pr-4">{produto.nome}</p>
           <button onClick={() => deletar(produto.id)}>🗑️</button>
         </div>
       ))}
